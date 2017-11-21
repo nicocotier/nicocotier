@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html class="a-html"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<head>
+		<title>Démo 2 import JSON de plusieurs objets à partir de Blender dans A-Frame, , méthode object-model</title>
+	 	<meta charset="utf-8">
+		
+		<script src="js/aframe-0.7.1.js"></script>
+		<script src="js/loaders.js"></script>
+		
+		
+	
+
+	</head>
+	<body> 
+		
+		<a-scene class="fullscreen" canvas="" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
+		
+				<!-- Ajout de lumières-->						
+				<a-entity light="color:#AAA; type:ambient ; intensity: 0.8;" position="0 8.4 -8" rotation="" scale="" visible=""></a-entity>
+				<a-entity light="type:directional; castShadow:true; intensity: 0.4; shadowCameraVisible: true;" position="-5 3 1.5" rotation="" scale="" visible=""></a-entity>		
+				<a-entity light="type:point; shadowBias:0.1; shadowCameraFov:50; castShadow:true; intensity: 0.8; shadowCameraVisible: true;" material="color:#0000ff;side: back; shader: flat;" position="2.233 1.756 -5.155" rotation="" scale="" visible=""></a-entity>
+		
+				
+			<!-- IMPORT DU FICHIER JSON avec la méthode object-model :-->		
+			<a-entity 
+				object-model="src: url(models/ROOM.json);" position="2 0 -4" material="color:#0000ff;side: back; shader: flat;" shadow="cast:true" rotation="" scale="" visible="">
+			</a-entity>
+			
+			<a-entity 
+				animation-mixer="clip: *;" object-model="src: url(models/ordi.json);" position="2 0 -4" material="color:#0000ff;side: back; shader: flat;" shadow="cast:true" rotation="" scale="" visible="">
+			</a-entity>
+			
+			<a-entity geometry="primitive: plane" material="color: blue" position="-10 0 0" sound="src: url(son/01.mp3); autoplay: true"></a-entity>
+			
+			
+				<!-- Ajout d'un cercle nous servant de sol:-->
+				<a-camera position:"0 1.6 0" rotation="" camera="" look-controls="" wasd-controls="">
+					<a-cursor color="#FAFAFA" material="" raycaster="" cursor="" geometry=""></a-cursor>
+				</a-camera>
+				
+				
+				
+		
+				
+	</a-scene>
+	</body>
+</html>
